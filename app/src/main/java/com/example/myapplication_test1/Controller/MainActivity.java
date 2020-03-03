@@ -83,14 +83,11 @@ init();
     {
         final Dialog dialog = new Dialog(MainActivity.this);
         dialog.setContentView(R.layout.yesno_dialog);
-        dialog.setTitle("Title...");
-
-// set the custom dialog components - text, image and button
-        //    TextView text = (TextView) dialog.findViewById(R.id.text);
-        //    text.setText("Android custom dialog example!");
-        //ImageView image = (ImageView) dialog.findViewById(R.id.image);
-        //    image.setImageResource(R.drawable.ic_launcher);
-
+        dialog.setTitle("yes/no dialog");
+           TextView txt_title= (TextView) dialog.findViewById(R.id.t1_title);
+           txt_title.setText("yes/no dialog");
+        TextView txt_msg= (TextView) dialog.findViewById(R.id.t1_msg);
+        txt_msg.setText("This dialog only has two action available ");
         Button dialogButton1 = (Button) dialog.findViewById(R.id.t1_correct);
         Button dialogButton2 = (Button) dialog.findViewById(R.id.t1_correct2);
 // if button is clicked, close the custom dialog
@@ -98,12 +95,14 @@ init();
             @Override
             public void onClick(View v) {
                 System.out.println("ok");
+                dialog.dismiss();
             }
         }) ;
         dialogButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 System.out.println("cancel");
+                dialog.dismiss();
             }
         }) ;
         dialog.show();

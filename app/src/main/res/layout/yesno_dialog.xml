@@ -33,7 +33,7 @@
         android:layout_width="59dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
-        android:background="@drawable/accept_circle"
+        android:background="@drawable/tick1"
         android:backgroundTint="@color/a"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/t1_correct2"
