@@ -59,6 +59,12 @@ init();
                     if(lstItem.getDno() == 1)
                     {
                         yesno();
+                    }else if(lstItem.getDno() == 2)
+                    {
+                        oneaction();
+                    }else if(lstItem.getDno() == 3)
+                    {
+                       mul();
                     }
 
             }
@@ -105,6 +111,65 @@ init();
                 dialog.dismiss();
             }
         }) ;
+        dialog.show();
+    }
+
+    public void mul()
+    {
+        final Dialog dialog = new Dialog(MainActivity.this);
+        dialog.setContentView(R.layout.multipleaction);
+        dialog.setTitle("multiple action dialog");
+        TextView txt_title= (TextView) dialog.findViewById(R.id.t1_title);
+        txt_title.setText("multiple action dialog");
+        TextView txt_msg= (TextView) dialog.findViewById(R.id.t1_msg);
+        txt_msg.setText("This dialog only has multiple actions ");
+        Button dialogButton1 = (Button) dialog.findViewById(R.id.t1_correct);
+        Button dialogButton2 = (Button) dialog.findViewById(R.id.t1_correct2);
+        Button dialogButton3 = (Button) dialog.findViewById(R.id.t3);
+// if button is clicked, close the custom dialog
+        dialogButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("ok");
+                dialog.dismiss();
+            }
+        }) ;
+        dialogButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("cancel");
+                dialog.dismiss();
+            }
+        }) ;
+        dialogButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("cancel");
+                dialog.dismiss();
+            }
+        }) ;
+        dialog.show();
+    }
+    public void oneaction()
+    {
+        final Dialog dialog = new Dialog(MainActivity.this);
+        dialog.setContentView(R.layout.oneaction);
+        dialog.setTitle("one action dialog");
+        TextView txt_title= (TextView) dialog.findViewById(R.id.t1_title);
+        txt_title.setText("one action dialog");
+        TextView txt_msg= (TextView) dialog.findViewById(R.id.t1_msg);
+        txt_msg.setText("There is one action in this dialog ");
+        Button dialogButton1 = (Button) dialog.findViewById(R.id.t1_correct);
+        Button dialogButton2 = (Button) dialog.findViewById(R.id.t1_correct2);
+// if button is clicked, close the custom dialog
+        dialogButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("ok");
+                dialog.dismiss();
+            }
+        }) ;
+
         dialog.show();
     }
 
