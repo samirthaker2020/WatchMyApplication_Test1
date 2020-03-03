@@ -51,6 +51,7 @@ public class MainAdapter extends BaseAdapter {
         ListDetails items = (ListDetails) getItem(position);
         if(items.getDialogHeader() !=null) {
             rowHeading.setText(String.valueOf(items.getDialogHeader()));
+
         }else {  }
         return convertView;
     }
